@@ -20,6 +20,7 @@
 		16C0E4162AD521F300BF143D /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C0E4152AD521F300BF143D /* Post.swift */; };
 		16C0E4182AD5297E00BF143D /* MainViewController + PostManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C0E4172AD5297E00BF143D /* MainViewController + PostManagerDelegate.swift */; };
 		16C0E41A2AD59A0C00BF143D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C0E4192AD59A0C00BF143D /* User.swift */; };
+		16C0E41C2AD5AD6B00BF143D /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C0E41B2AD5AD6B00BF143D /* DetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		16C0E4152AD521F300BF143D /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		16C0E4172AD5297E00BF143D /* MainViewController + PostManagerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController + PostManagerDelegate.swift"; sourceTree = "<group>"; };
 		16C0E4192AD59A0C00BF143D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		16C0E41B2AD5AD6B00BF143D /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				16C0E3D92AD2CA8200BF143D /* MainViewController.swift */,
+				16C0E41B2AD5AD6B00BF143D /* DetailsViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -252,6 +255,7 @@
 				16C0E4142AD51DDA00BF143D /* PostManager.swift in Sources */,
 				16C0E4032AD4681E00BF143D /* PostsCell.swift in Sources */,
 				16C0E3D82AD2CA8200BF143D /* SceneDelegate.swift in Sources */,
+				16C0E41C2AD5AD6B00BF143D /* DetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

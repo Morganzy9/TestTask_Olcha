@@ -14,7 +14,8 @@ protocol PostManagerDelegate: AnyObject {
 }
 
 struct PostManager {
-    let baseURL = "https://jsonplaceholder.typicode.com/"
+    private let baseURL = "https://jsonplaceholder.typicode.com/"
+    
     weak var delegate: PostManagerDelegate?
     
     func fetchPosts() {
