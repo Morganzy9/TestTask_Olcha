@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MainViewController.swift
 //  TestTask_Olcha
 //
 //  Created by Ислам Пулатов on 10/8/23.
@@ -34,6 +34,7 @@ extension MainViewController {
     private func setup() {
         addSubView()
         setDelegates()
+        registerCells()
         setupConstrains()
     }
     
@@ -44,6 +45,10 @@ extension MainViewController {
     private func setDelegates() {
         postsTableView.delegate = self
         postsTableView.dataSource = self
+    }
+    
+    private func registerCells() {
+        postsTableView.register(PostsCell.self, forCellReuseIdentifier: PostsCell.reuseIdentifier)
     }
     
     private func setupConstrains() {
