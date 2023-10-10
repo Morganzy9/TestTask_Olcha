@@ -10,6 +10,12 @@ import SnapKit
 
 class MainViewController: UIViewController {
     
+    //  MARK: - Constants
+    
+    var postManager = PostManager()
+    
+    var posts: [Post] = []
+    
     //  MARK: - UI Elements
     
     let postsTableView: UITableView = {
@@ -18,6 +24,11 @@ class MainViewController: UIViewController {
     }()
     
     //  MARK: - LifeCycle
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        postManager.fetchPosts()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,6 +56,7 @@ extension MainViewController {
     private func setDelegates() {
         postsTableView.delegate = self
         postsTableView.dataSource = self
+        postManager.delegate = self
     }
     
     private func registerCells() {

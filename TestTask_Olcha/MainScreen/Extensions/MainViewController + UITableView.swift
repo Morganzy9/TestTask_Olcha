@@ -10,7 +10,7 @@ import UIKit
 extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return posts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -18,14 +18,10 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         guard let postCell = postsTableView.dequeueReusableCell(withIdentifier: PostsCell.reuseIdentifier, for: indexPath) as? PostsCell else {
             fatalError("Can not dequeue PostsCell")
         }
-        var data: [PostModel] = []
+        let currentCell = posts[indexPath.row]
         
-        for _ in 1...11 {
-            data.append(PostModel(authorName: "Ola", postsTitle: "Akfjnsekfjns fjksnefkjesn"))
-            print(data.count)
-        }
+        postCell.configureCell(authorName: currentCell.body, postsTitle: currentCell.title)
         
-        postCell.cellData = data[indexPath.row]
         return postCell
     }
     

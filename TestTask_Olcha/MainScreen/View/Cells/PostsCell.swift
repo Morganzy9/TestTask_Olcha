@@ -14,12 +14,12 @@ class PostsCell: UITableViewCell {
     
     //  MARK: - Set Cell Data
     
-    var cellData: PostModel? {
-        didSet {
-            self.authrorNameLabel.text = cellData?.authorName
-            self.postsTitleLabel.text = cellData?.postsTitle
-        }
-    }
+//    var cellData: PostModel? {
+//        didSet {
+//            self.authrorNameLabel.text = cellData?.authorName
+//            self.postsTitleLabel.text = cellData?.postsTitle
+//        }
+//    }
     
     //  MARK: - UI Elements
     
@@ -35,18 +35,14 @@ class PostsCell: UITableViewCell {
         return label
     }()
     
-    //  MARK: - Init Cell
-    
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-        setup()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
     
     //  MARK: - Private Functions
+    
+    func configureCell(authorName: String, postsTitle: String) {
+        authrorNameLabel.text = authorName
+        postsTitleLabel.text = postsTitle
+        setup()
+    }
     
     private func setup() {
         addCellSubViews()

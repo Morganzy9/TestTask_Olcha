@@ -16,7 +16,9 @@
 		16C0E3FB2AD2DAFE00BF143D /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 16C0E3FA2AD2DAFE00BF143D /* SnapKit-Dynamic */; };
 		16C0E3FD2AD2DBCA00BF143D /* MainViewController + UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C0E3FC2AD2DBCA00BF143D /* MainViewController + UITableView.swift */; };
 		16C0E4032AD4681E00BF143D /* PostsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C0E4022AD4681E00BF143D /* PostsCell.swift */; };
-		16C0E4062AD46D3700BF143D /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C0E4052AD46D3700BF143D /* PostModel.swift */; };
+		16C0E4142AD51DDA00BF143D /* PostManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C0E4132AD51DDA00BF143D /* PostManager.swift */; };
+		16C0E4162AD521F300BF143D /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C0E4152AD521F300BF143D /* Post.swift */; };
+		16C0E4182AD5297E00BF143D /* MainViewController + PostManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C0E4172AD5297E00BF143D /* MainViewController + PostManagerDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,7 +31,9 @@
 		16C0E3E32AD2CA8400BF143D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		16C0E3FC2AD2DBCA00BF143D /* MainViewController + UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController + UITableView.swift"; sourceTree = "<group>"; };
 		16C0E4022AD4681E00BF143D /* PostsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsCell.swift; sourceTree = "<group>"; };
-		16C0E4052AD46D3700BF143D /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
+		16C0E4132AD51DDA00BF143D /* PostManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostManager.swift; sourceTree = "<group>"; };
+		16C0E4152AD521F300BF143D /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		16C0E4172AD5297E00BF143D /* MainViewController + PostManagerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController + PostManagerDelegate.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,7 +69,6 @@
 			isa = PBXGroup;
 			children = (
 				16C0E3EF2AD2D7C300BF143D /* App */,
-				16C0E3FE2AD2DCBA00BF143D /* Network */,
 				16C0E3F02AD2D7CC00BF143D /* CustomTabBar */,
 				16C0E3F12AD2D7DD00BF143D /* MainScreen */,
 				16C0E3F22AD2D81100BF143D /* LaunchScreen */,
@@ -103,7 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				16C0E4042AD46D2B00BF143D /* Model */,
-				16C0E3F42AD2D89C00BF143D /* Conroller */,
+				16C0E3F42AD2D89C00BF143D /* Controller */,
 				16C0E3F52AD2D8A600BF143D /* View */,
 				16C0E3F62AD2DA2A00BF143D /* Extensions */,
 			);
@@ -118,12 +121,12 @@
 			path = LaunchScreen;
 			sourceTree = "<group>";
 		};
-		16C0E3F42AD2D89C00BF143D /* Conroller */ = {
+		16C0E3F42AD2D89C00BF143D /* Controller */ = {
 			isa = PBXGroup;
 			children = (
 				16C0E3D92AD2CA8200BF143D /* MainViewController.swift */,
 			);
-			path = Conroller;
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		16C0E3F52AD2D8A600BF143D /* View */ = {
@@ -138,15 +141,9 @@
 			isa = PBXGroup;
 			children = (
 				16C0E3FC2AD2DBCA00BF143D /* MainViewController + UITableView.swift */,
+				16C0E4172AD5297E00BF143D /* MainViewController + PostManagerDelegate.swift */,
 			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		16C0E3FE2AD2DCBA00BF143D /* Network */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Network;
 			sourceTree = "<group>";
 		};
 		16C0E4012AD467FC00BF143D /* Cells */ = {
@@ -160,7 +157,8 @@
 		16C0E4042AD46D2B00BF143D /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				16C0E4052AD46D3700BF143D /* PostModel.swift */,
+				16C0E4132AD51DDA00BF143D /* PostManager.swift */,
+				16C0E4152AD521F300BF143D /* Post.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -243,9 +241,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				16C0E3DA2AD2CA8200BF143D /* MainViewController.swift in Sources */,
-				16C0E4062AD46D3700BF143D /* PostModel.swift in Sources */,
 				16C0E3FD2AD2DBCA00BF143D /* MainViewController + UITableView.swift in Sources */,
+				16C0E4162AD521F300BF143D /* Post.swift in Sources */,
 				16C0E3D62AD2CA8200BF143D /* AppDelegate.swift in Sources */,
+				16C0E4182AD5297E00BF143D /* MainViewController + PostManagerDelegate.swift in Sources */,
+				16C0E4142AD51DDA00BF143D /* PostManager.swift in Sources */,
 				16C0E4032AD4681E00BF143D /* PostsCell.swift in Sources */,
 				16C0E3D82AD2CA8200BF143D /* SceneDelegate.swift in Sources */,
 			);
