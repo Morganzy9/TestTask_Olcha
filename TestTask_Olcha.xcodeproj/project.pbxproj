@@ -21,6 +21,8 @@
 		16C0E4182AD5297E00BF143D /* MainViewController + PostManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C0E4172AD5297E00BF143D /* MainViewController + PostManagerDelegate.swift */; };
 		16C0E41A2AD59A0C00BF143D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C0E4192AD59A0C00BF143D /* User.swift */; };
 		16C0E41C2AD5AD6B00BF143D /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C0E41B2AD5AD6B00BF143D /* DetailsViewController.swift */; };
+		16C0E4202AD5B0D300BF143D /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C0E41F2AD5B0D300BF143D /* CustomTabBarController.swift */; };
+		16C0E4232AD5B16D00BF143D /* SavedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C0E4222AD5B16D00BF143D /* SavedViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		16C0E4172AD5297E00BF143D /* MainViewController + PostManagerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController + PostManagerDelegate.swift"; sourceTree = "<group>"; };
 		16C0E4192AD59A0C00BF143D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		16C0E41B2AD5AD6B00BF143D /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		16C0E41F2AD5B0D300BF143D /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
+		16C0E4222AD5B16D00BF143D /* SavedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +79,7 @@
 				16C0E3EF2AD2D7C300BF143D /* App */,
 				16C0E3F02AD2D7CC00BF143D /* CustomTabBar */,
 				16C0E3F12AD2D7DD00BF143D /* MainScreen */,
+				16C0E4212AD5B15500BF143D /* SavedScreen */,
 				16C0E3F22AD2D81100BF143D /* LaunchScreen */,
 				16C0E3EE2AD2D7B400BF143D /* Resources */,
 				16C0E3E32AD2CA8400BF143D /* Info.plist */,
@@ -102,6 +107,7 @@
 		16C0E3F02AD2D7CC00BF143D /* CustomTabBar */ = {
 			isa = PBXGroup;
 			children = (
+				16C0E41F2AD5B0D300BF143D /* CustomTabBarController.swift */,
 			);
 			path = CustomTabBar;
 			sourceTree = "<group>";
@@ -167,6 +173,14 @@
 				16C0E4132AD51DDA00BF143D /* PostManager.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		16C0E4212AD5B15500BF143D /* SavedScreen */ = {
+			isa = PBXGroup;
+			children = (
+				16C0E4222AD5B16D00BF143D /* SavedViewController.swift */,
+			);
+			path = SavedScreen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -248,12 +262,14 @@
 			files = (
 				16C0E3DA2AD2CA8200BF143D /* MainViewController.swift in Sources */,
 				16C0E41A2AD59A0C00BF143D /* User.swift in Sources */,
+				16C0E4202AD5B0D300BF143D /* CustomTabBarController.swift in Sources */,
 				16C0E3FD2AD2DBCA00BF143D /* MainViewController + UITableView.swift in Sources */,
 				16C0E4162AD521F300BF143D /* Post.swift in Sources */,
 				16C0E3D62AD2CA8200BF143D /* AppDelegate.swift in Sources */,
 				16C0E4182AD5297E00BF143D /* MainViewController + PostManagerDelegate.swift in Sources */,
 				16C0E4142AD51DDA00BF143D /* PostManager.swift in Sources */,
 				16C0E4032AD4681E00BF143D /* PostsCell.swift in Sources */,
+				16C0E4232AD5B16D00BF143D /* SavedViewController.swift in Sources */,
 				16C0E3D82AD2CA8200BF143D /* SceneDelegate.swift in Sources */,
 				16C0E41C2AD5AD6B00BF143D /* DetailsViewController.swift in Sources */,
 			);
