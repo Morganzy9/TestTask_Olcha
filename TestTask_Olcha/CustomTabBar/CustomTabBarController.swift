@@ -13,6 +13,7 @@ class CustomTabBarController: UITabBarController, UITabBarControllerDelegate {
         super.viewDidLoad()
         self.delegate = self
         
+        tabBar.tintColor = .red
         removeTabbarItemsText()
     }
     
@@ -32,6 +33,7 @@ class CustomTabBarController: UITabBarController, UITabBarControllerDelegate {
         let tabBarList = [mainNC, savedNC]
 
         viewControllers = tabBarList
+        
     }
 
     
