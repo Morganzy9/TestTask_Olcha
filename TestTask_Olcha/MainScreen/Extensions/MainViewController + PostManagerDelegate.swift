@@ -17,6 +17,12 @@ extension MainViewController: PostManagerDelegate {
         }
     }
     
+    func didFetchUsers(_ namager: PostManager, _ users: [User]) {
+        self.users = users
+        
+        
+    }
+    
     func didFailWithError(_ error: Error) {
         print(error.localizedDescription)
     }

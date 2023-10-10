@@ -12,26 +12,16 @@ class PostsCell: UITableViewCell {
     
     static let reuseIdentifier = "UITableViewPostsCell"
     
-    //  MARK: - Set Cell Data
-    
-//    var cellData: PostModel? {
-//        didSet {
-//            self.authrorNameLabel.text = cellData?.authorName
-//            self.postsTitleLabel.text = cellData?.postsTitle
-//        }
-//    }
-    
     //  MARK: - UI Elements
-    
-    private let postsTitleLabel: UILabel = {
-        let label = UILabel()
-        
-        return label
-    }()
     
     private let authrorNameLabel: UILabel = {
         let label = UILabel()
-        
+        return label
+    }()
+    
+    private let postsTitleLabel: UILabel = {
+        let label = UILabel()
+        label.numberOfLines = 0
         return label
     }()
     
@@ -55,14 +45,14 @@ class PostsCell: UITableViewCell {
     }
     
     private func setConstrains() {
-        postsTitleLabel.snp.makeConstraints { make in
+        authrorNameLabel.snp.makeConstraints { make in
             make.top.equalTo(safeAreaLayoutGuide).offset(10)
             make.leading.equalTo(safeAreaLayoutGuide).offset(10)
         }
-        
-        authrorNameLabel.snp.makeConstraints { make in
-            make.top.equalTo(postsTitleLabel.snp.bottom).offset(10)
+        postsTitleLabel.snp.makeConstraints { make in
+            make.top.equalTo(authrorNameLabel.snp.bottom).offset(10)
             make.leading.equalTo(safeAreaLayoutGuide).offset(10)
+            make.trailing.equalTo(safeAreaLayoutGuide).offset(-10)
         }
     }
 }

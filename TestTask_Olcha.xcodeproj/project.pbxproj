@@ -19,6 +19,7 @@
 		16C0E4142AD51DDA00BF143D /* PostManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C0E4132AD51DDA00BF143D /* PostManager.swift */; };
 		16C0E4162AD521F300BF143D /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C0E4152AD521F300BF143D /* Post.swift */; };
 		16C0E4182AD5297E00BF143D /* MainViewController + PostManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C0E4172AD5297E00BF143D /* MainViewController + PostManagerDelegate.swift */; };
+		16C0E41A2AD59A0C00BF143D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C0E4192AD59A0C00BF143D /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		16C0E4132AD51DDA00BF143D /* PostManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostManager.swift; sourceTree = "<group>"; };
 		16C0E4152AD521F300BF143D /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		16C0E4172AD5297E00BF143D /* MainViewController + PostManagerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController + PostManagerDelegate.swift"; sourceTree = "<group>"; };
+		16C0E4192AD59A0C00BF143D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,8 +159,9 @@
 		16C0E4042AD46D2B00BF143D /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				16C0E4132AD51DDA00BF143D /* PostManager.swift */,
 				16C0E4152AD521F300BF143D /* Post.swift */,
+				16C0E4192AD59A0C00BF143D /* User.swift */,
+				16C0E4132AD51DDA00BF143D /* PostManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -241,6 +244,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				16C0E3DA2AD2CA8200BF143D /* MainViewController.swift in Sources */,
+				16C0E41A2AD59A0C00BF143D /* User.swift in Sources */,
 				16C0E3FD2AD2DBCA00BF143D /* MainViewController + UITableView.swift in Sources */,
 				16C0E4162AD521F300BF143D /* Post.swift in Sources */,
 				16C0E3D62AD2CA8200BF143D /* AppDelegate.swift in Sources */,

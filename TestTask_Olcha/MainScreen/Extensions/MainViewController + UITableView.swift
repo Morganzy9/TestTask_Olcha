@@ -10,7 +10,7 @@ import UIKit
 extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return posts.count
+        return users.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -18,15 +18,16 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         guard let postCell = postsTableView.dequeueReusableCell(withIdentifier: PostsCell.reuseIdentifier, for: indexPath) as? PostsCell else {
             fatalError("Can not dequeue PostsCell")
         }
-        let currentCell = posts[indexPath.row]
+        let currentUser = users[indexPath.row]
+        let currentPost = posts[indexPath.row]
         
-        postCell.configureCell(authorName: currentCell.body, postsTitle: currentCell.title)
+        postCell.configureCell(authorName: currentUser.name, postsTitle: currentPost.title)
         
         return postCell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 70
+        return 90
     }
     
 }

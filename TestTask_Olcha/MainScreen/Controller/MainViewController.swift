@@ -15,6 +15,7 @@ class MainViewController: UIViewController {
     var postManager = PostManager()
     
     var posts: [Post] = []
+    var users: [User] = []
     
     //  MARK: - UI Elements
     
