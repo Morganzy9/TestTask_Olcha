@@ -14,7 +14,7 @@ class CustomTabBarController: UITabBarController, UITabBarControllerDelegate {
         self.delegate = self
         
         tabBar.tintColor = .red
-        removeTabbarItemsText()
+        tabBar.backgroundColor = Colors.darkWhite
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -33,19 +33,6 @@ class CustomTabBarController: UITabBarController, UITabBarControllerDelegate {
         let tabBarList = [mainNC, savedNC]
 
         viewControllers = tabBarList
-        
     }
 
-    
-    func removeTabbarItemsText() {
-       if let items = tabBarController?.tabBar.items {
-          for item in items {
-             item.title = ""
-              item.imageInsets = UIEdgeInsets(top: 6,
-                                              left: 0,
-                                              bottom: -6,
-                                              right: 0)
-          }
-       }
-    }
 }
