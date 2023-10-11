@@ -45,6 +45,12 @@ extension SavedViewController: UITableViewDelegate, UITableViewDataSource {
 
         return UISwipeActionsConfiguration(actions: [delete])
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let destinationVC = DetailsViewController()
+        destinationVC.user = SavedPostsManager.shared.savedUsers[indexPath.row]
+        navigationController?.pushViewController(destinationVC, animated: true)
+    }
 
     
 }

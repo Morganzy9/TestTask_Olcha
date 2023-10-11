@@ -27,6 +27,7 @@
 		16C0E4362AD667DD00BF143D /* SavedViewController + UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C0E4352AD667DD00BF143D /* SavedViewController + UITableView.swift */; };
 		16C0E4392AD6683C00BF143D /* SavedPostsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C0E4382AD6683C00BF143D /* SavedPostsManager.swift */; };
 		16C0E43D2AD6EBE100BF143D /* MainViewController + UISearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C0E43C2AD6EBE100BF143D /* MainViewController + UISearchBar.swift */; };
+		16C0E4412AD6FB4C00BF143D /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C0E4402AD6FB4C00BF143D /* Colors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		16C0E4352AD667DD00BF143D /* SavedViewController + UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SavedViewController + UITableView.swift"; sourceTree = "<group>"; };
 		16C0E4382AD6683C00BF143D /* SavedPostsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedPostsManager.swift; sourceTree = "<group>"; };
 		16C0E43C2AD6EBE100BF143D /* MainViewController + UISearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController + UISearchBar.swift"; sourceTree = "<group>"; };
+		16C0E4402AD6FB4C00BF143D /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 				16C0E4212AD5B15500BF143D /* SavedScreen */,
 				16C0E3F22AD2D81100BF143D /* LaunchScreen */,
 				16C0E4242AD5B7A700BF143D /* Extensions */,
+				16C0E43E2AD6FB2C00BF143D /* Constant */,
 				16C0E3EE2AD2D7B400BF143D /* Resources */,
 				16C0E3E32AD2CA8400BF143D /* Info.plist */,
 			);
@@ -251,6 +254,14 @@
 			path = SavedData;
 			sourceTree = "<group>";
 		};
+		16C0E43E2AD6FB2C00BF143D /* Constant */ = {
+			isa = PBXGroup;
+			children = (
+				16C0E4402AD6FB4C00BF143D /* Colors.swift */,
+			);
+			path = Constant;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -344,6 +355,7 @@
 				16C0E3D82AD2CA8200BF143D /* SceneDelegate.swift in Sources */,
 				16C0E4362AD667DD00BF143D /* SavedViewController + UITableView.swift in Sources */,
 				16C0E41C2AD5AD6B00BF143D /* DetailsViewController.swift in Sources */,
+				16C0E4412AD6FB4C00BF143D /* Colors.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -15,7 +15,7 @@ class MainViewController: UIViewController {
     var postManager = PostManager()
     
     var posts: [Post] = []
-    var users: [User] = []    
+    var users: [User] = []
     var filteredPosts: [Post] = []
     var isSearching: Bool = false
 
@@ -45,9 +45,7 @@ class MainViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        DispatchQueue.main.async {
-            self.postManager.fetchPosts()
-        }
+        postManager.fetchPosts()
     }
     
     override func viewDidLoad() {
@@ -55,7 +53,7 @@ class MainViewController: UIViewController {
         view.backgroundColor = .white
         setup()
     }
-
+    
 }
 
 extension MainViewController {
@@ -110,12 +108,12 @@ extension MainViewController {
     
     @objc private func refreshData() {
         postManager.fetchPosts()
-
+        
         DispatchQueue.main.async {
             self.postsTableView.reloadData()
             self.refreshControl.endRefreshing()
         }
     }
-
+    
 }
 
