@@ -24,6 +24,8 @@
 		16C0E4202AD5B0D300BF143D /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C0E41F2AD5B0D300BF143D /* CustomTabBarController.swift */; };
 		16C0E4232AD5B16D00BF143D /* SavedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C0E4222AD5B16D00BF143D /* SavedViewController.swift */; };
 		16C0E4262AD5B7BA00BF143D /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C0E4252AD5B7BA00BF143D /* UILabel.swift */; };
+		16C0E4362AD667DD00BF143D /* SavedViewController + UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C0E4352AD667DD00BF143D /* SavedViewController + UITableView.swift */; };
+		16C0E4392AD6683C00BF143D /* SavedPostsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C0E4382AD6683C00BF143D /* SavedPostsManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +46,8 @@
 		16C0E41F2AD5B0D300BF143D /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
 		16C0E4222AD5B16D00BF143D /* SavedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedViewController.swift; sourceTree = "<group>"; };
 		16C0E4252AD5B7BA00BF143D /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
+		16C0E4352AD667DD00BF143D /* SavedViewController + UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SavedViewController + UITableView.swift"; sourceTree = "<group>"; };
+		16C0E4382AD6683C00BF143D /* SavedPostsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedPostsManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,9 +175,7 @@
 		16C0E4042AD46D2B00BF143D /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				16C0E4152AD521F300BF143D /* Post.swift */,
-				16C0E4192AD59A0C00BF143D /* User.swift */,
-				16C0E4132AD51DDA00BF143D /* PostManager.swift */,
+				16C0E43A2AD668CE00BF143D /* Networking */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -181,7 +183,10 @@
 		16C0E4212AD5B15500BF143D /* SavedScreen */ = {
 			isa = PBXGroup;
 			children = (
-				16C0E4222AD5B16D00BF143D /* SavedViewController.swift */,
+				16C0E4312AD667A700BF143D /* Mdoel */,
+				16C0E4322AD667AE00BF143D /* View */,
+				16C0E4332AD667B600BF143D /* Controller */,
+				16C0E4342AD667C600BF143D /* Extensions */,
 			);
 			path = SavedScreen;
 			sourceTree = "<group>";
@@ -192,6 +197,55 @@
 				16C0E4252AD5B7BA00BF143D /* UILabel.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		16C0E4312AD667A700BF143D /* Mdoel */ = {
+			isa = PBXGroup;
+			children = (
+				16C0E43B2AD6690200BF143D /* SavedData */,
+			);
+			path = Mdoel;
+			sourceTree = "<group>";
+		};
+		16C0E4322AD667AE00BF143D /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		16C0E4332AD667B600BF143D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				16C0E4222AD5B16D00BF143D /* SavedViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		16C0E4342AD667C600BF143D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				16C0E4352AD667DD00BF143D /* SavedViewController + UITableView.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		16C0E43A2AD668CE00BF143D /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				16C0E4152AD521F300BF143D /* Post.swift */,
+				16C0E4192AD59A0C00BF143D /* User.swift */,
+				16C0E4132AD51DDA00BF143D /* PostManager.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		16C0E43B2AD6690200BF143D /* SavedData */ = {
+			isa = PBXGroup;
+			children = (
+				16C0E4382AD6683C00BF143D /* SavedPostsManager.swift */,
+			);
+			path = SavedData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -275,6 +329,7 @@
 				16C0E4262AD5B7BA00BF143D /* UILabel.swift in Sources */,
 				16C0E41A2AD59A0C00BF143D /* User.swift in Sources */,
 				16C0E4202AD5B0D300BF143D /* CustomTabBarController.swift in Sources */,
+				16C0E4392AD6683C00BF143D /* SavedPostsManager.swift in Sources */,
 				16C0E3FD2AD2DBCA00BF143D /* MainViewController + UITableView.swift in Sources */,
 				16C0E4162AD521F300BF143D /* Post.swift in Sources */,
 				16C0E3D62AD2CA8200BF143D /* AppDelegate.swift in Sources */,
@@ -283,6 +338,7 @@
 				16C0E4032AD4681E00BF143D /* PostsCell.swift in Sources */,
 				16C0E4232AD5B16D00BF143D /* SavedViewController.swift in Sources */,
 				16C0E3D82AD2CA8200BF143D /* SceneDelegate.swift in Sources */,
+				16C0E4362AD667DD00BF143D /* SavedViewController + UITableView.swift in Sources */,
 				16C0E41C2AD5AD6B00BF143D /* DetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
