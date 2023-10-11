@@ -13,103 +13,108 @@ class DetailsViewController: UIViewController {
     
     //    MARK: - UI Elements
     //    User
-    private let userId: UILabel = {
+    private let userTitle: UILabel = {
         let label = UILabel()
+        label.text = "User Information"
+        label.textAlignment = .center
+        label.font = .systemFont(ofSize: 32, weight: .bold)
         return label
+    }()
+    
+    private let userId: UILabel = {
+        return UILabel(textColor: .black, textFont: .systemFont(ofSize: 17, weight: .medium))
     }()
     
     private let usersName: UILabel = {
-        let label = UILabel()
-        return label
+        return UILabel(textColor: .black, textFont: .systemFont(ofSize: 17, weight: .medium))
     }()
     
     private let userName: UILabel = {
-        let label = UILabel()
-        return label
+        return UILabel(textColor: .black, textFont: .systemFont(ofSize: 17, weight: .medium))
     }()
     
     private let userEmail: UILabel = {
-        let label = UILabel()
-        return label
+        return UILabel(textColor: .black, textFont: .systemFont(ofSize: 17, weight: .medium))
     }()
     
     private let userPhone: UILabel = {
-        let label = UILabel()
-        return label
+        return UILabel(textColor: .black, textFont: .systemFont(ofSize: 17, weight: .medium))
     }()
     
     private let userWebsite: UILabel = {
-        let label = UILabel()
-        return label
+        return UILabel(textColor: .black, textFont: .systemFont(ofSize: 17, weight: .medium))
     }()
     
     private lazy var userStack: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [userId, usersName, userName, userEmail, userPhone, userWebsite])
-        stackView.axis = .horizontal
-        stackView.spacing = 0
+        stackView.axis = .vertical
+        stackView.spacing = 5
         stackView.distribution = .fill
         return stackView
     }()
     
     //    Address
-    private let userStreet: UILabel = {
+    private let userAddress: UILabel = {
         let label = UILabel()
+        label.text = "User Address"
+        label.textAlignment = .center
+        label.font = .systemFont(ofSize: 32, weight: .bold)
         return label
+    }()
+    
+    private let userStreet: UILabel = {
+        return UILabel(textColor: .black, textFont: .systemFont(ofSize: 17, weight: .medium))
     }()
     
     private let userSuite: UILabel = {
-        let label = UILabel()
-        return label
+        return UILabel(textColor: .black, textFont: .systemFont(ofSize: 17, weight: .medium))
     }()
     
     private let userCity: UILabel = {
-        let label = UILabel()
-        return label
+        return UILabel(textColor: .black, textFont: .systemFont(ofSize: 17, weight: .medium))
     }()
     
     private let userZipCode: UILabel = {
-        let label = UILabel()
-        return label
+        return UILabel(textColor: .black, textFont: .systemFont(ofSize: 17, weight: .medium))
     }()
     
     private let userLat: UILabel = {
-        let label = UILabel()
-        return label
+        return UILabel(textColor: .black, textFont: .systemFont(ofSize: 17, weight: .medium))
     }()
     
     private let userLng: UILabel = {
-        let label = UILabel()
-        return label
+        return UILabel(textColor: .black, textFont: .systemFont(ofSize: 17, weight: .medium))
     }()
     
     private lazy var addressStack: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [userStreet, userSuite, userCity, userZipCode, userLat, userLng])
-        stackView.axis = .horizontal
-        stackView.spacing = 0
+        stackView.axis = .vertical
+        stackView.spacing = 5
         stackView.distribution = .fill
         return stackView
     }()
     
     //    Company
+    private let userCompany: UILabel = {
+        return UILabel(labelText: "User Company", textColor: .black)
+    }()
+    
     private let userCompanyName: UILabel = {
-        let label = UILabel()
-        return label
+        return UILabel(textColor: .black, textFont: .systemFont(ofSize: 17, weight: .medium))
     }()
     
     private let userCompanyCatchPhrase: UILabel = {
-        let label = UILabel()
-        return label
+        return UILabel(textColor: .black, textFont: .systemFont(ofSize: 17, weight: .medium))
     }()
     
     private let userCompanyBS: UILabel = {
-        let label = UILabel()
-        return label
+        return UILabel(textColor: .black, textFont: .systemFont(ofSize: 17, weight: .medium))
     }()
     
     private lazy var companyStack: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [userCompanyName, userCompanyCatchPhrase, userCompanyBS])
-        stackView.axis = .horizontal
-        stackView.spacing = 0
+        stackView.axis = .vertical
+        stackView.spacing = 5
         stackView.distribution = .fill
         return stackView
     }()
@@ -119,6 +124,7 @@ class DetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .white
         setup()
     }
 }
@@ -133,46 +139,65 @@ extension DetailsViewController {
     }
     
     private func addSubView() {
+        view.addSubview(userTitle)
         view.addSubview(userStack)
+        view.addSubview(userAddress)
         view.addSubview(addressStack)
+        view.addSubview(userCompany)
         view.addSubview(companyStack)
     }
     
     private func setInformation() {
-        userId.text = "User ID: \(String(describing: user?.id))"
-        usersName.text = "User Name: \(String(describing: user?.name))"
-        userName.text = "User UserName: \(String(describing: user?.username))"
-        userEmail.text = "User Email: \(String(describing: user?.email))"
-        userPhone.text = "User Phone Number: \(String(describing: user?.phone))"
-        userWebsite.text = "Users WebSite: \(String(describing: user?.website))"
+        if let id = user?.id  {
+            userId.text = "User ID: \(id)"
+        } else {
+            userId.text = "User ID: \(0)"
+        }
+        usersName.text = "User Name: \(user?.name ?? "")"
+        userName.text = "User UserName: \(user?.username ?? "")"
+        userEmail.text = "User Email: \(user?.email ?? "")"
+        userPhone.text = "User Phone Number: \(user?.phone ?? "")"
+        userWebsite.text = "Users WebSite: \(user?.website ?? "")"
         
-        userStreet.text = "Users Street: \(String(describing: user?.address.street))"
-        userSuite.text = "Users Suite: \(String(describing: user?.address.suite))"
-        userCity.text = "Users City: \(String(describing: user?.address.city))"
-        userCity.text = "Users ZipCode: \(String(describing: user?.address.zipcode))"
-        userLat.text = "Users Latitude: \(String(describing: user?.address.geo.lat))"
-        userLng.text = "Users Longitude: \(String(describing: user?.address.geo.lng))"
+        userStreet.text = "Users Street: \(user?.address.street ?? "")"
+        userSuite.text = "Users Suite: \(user?.address.suite ?? "")"
+        userCity.text = "Users City: \(user?.address.city ?? "")"
+        userZipCode.text = "Users ZipCode: \(user?.address.zipcode ?? "")"
+        userLat.text = "Users Latitude: \(user?.address.geo.lat ?? "")"
+        userLng.text = "Users Longitude: \(user?.address.geo.lng ?? "")"
         
-        userCompanyName.text = "Users Company Name: \(String(describing: user?.company.name))"
-        userCompanyCatchPhrase.text = "Users Company Catch Phrase: \(String(describing: user?.company.catchPhrase))"
-        userCompanyBS.text = "Users BS \(String(describing: user?.company.bs))"
+        userCompanyName.text = "Users Company Name: \(user?.company.name ?? "")"
+        userCompanyCatchPhrase.text = "Users Company Catch Phrase: \(user?.company.catchPhrase ?? "")"
+        userCompanyBS.text = "Users BS \(user?.company.bs ?? "")"
     }
     
     private func setupConstrains() {
+        userTitle.snp.makeConstraints { make in
+            make.top.equalTo(view.safeAreaLayoutGuide).offset(15)
+            make.leading.trailing.equalTo(view.safeAreaLayoutGuide)
+        }
         userStack.snp.makeConstraints { make in
-            make.top.equalTo(view.safeAreaLayoutGuide)
+            make.top.equalTo(userTitle.snp.bottom).offset(10)
             make.leading.equalTo(view.safeAreaLayoutGuide).offset(15)
             make.trailing.equalTo(view.safeAreaLayoutGuide).offset(-15)
+        }
+        userAddress.snp.makeConstraints { make in
+            make.top.equalTo(userStack.snp.bottom).offset(10)
+            make.leading.trailing.equalTo(view.safeAreaLayoutGuide)
         }
         addressStack.snp.makeConstraints { make in
-            make.top.equalTo(userStack.snp.bottom).offset(5)
+            make.top.equalTo(userAddress.snp.bottom).offset(10)
             make.leading.equalTo(view.safeAreaLayoutGuide).offset(15)
             make.trailing.equalTo(view.safeAreaLayoutGuide).offset(-15)
         }
+        userCompany.snp.makeConstraints { make in
+            make.top.equalTo(addressStack.snp.bottom).offset(10)
+            make.leading.trailing.equalTo(view.safeAreaLayoutGuide)
+        }
         companyStack.snp.makeConstraints { make in
-            make.top.equalTo(addressStack.snp.bottom).offset(5)
+            make.top.equalTo(userCompany.snp.bottom).offset(10)
             make.leading.equalTo(view.safeAreaLayoutGuide).offset(15)
-            make.trailing.equalTo(view.safeAreaLayoutGuide).offset(15)
+            make.trailing.equalTo(view.safeAreaLayoutGuide).offset(-15)
         }
     }
     

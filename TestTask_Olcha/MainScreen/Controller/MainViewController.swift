@@ -44,6 +44,7 @@ extension MainViewController {
     //  MARK: - Private Functions
     
     private func setup() {
+        setNavigationController()
         addSubView()
         setDelegates()
         registerCells()
@@ -52,6 +53,11 @@ extension MainViewController {
     
     private func addSubView() {
         view.addSubview(postsTableView)
+    }
+    
+    
+    private func setNavigationController() {
+        title = "Posts"
     }
     
     private func setDelegates() {
