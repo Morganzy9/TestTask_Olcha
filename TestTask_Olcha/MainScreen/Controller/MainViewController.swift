@@ -30,15 +30,24 @@ class MainViewController: UIViewController {
         return searchBar
     }()
     
+    let refreshControl: UIRefreshControl = {
+        let refresh = UIRefreshControl()
+        refresh.addTarget(refreshData.self, action: #selector(refreshData), for: .valueChanged)
+        return refresh
+    }()
+    
     let postsTableView: UITableView = {
-        return UITableView()
+        let tableView = UITableView()
+        return tableView
     }()
     
     //  MARK: - LifeCycle
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        postManager.fetchPosts()
+        DispatchQueue.main.async {
+            self.postManager.fetchPosts()
+        }
     }
     
     override func viewDidLoad() {
@@ -59,6 +68,7 @@ extension MainViewController {
         setDelegates()
         registerCells()
         setupConstrains()
+        postsTableView.refreshControl = refreshControl
     }
     
     private func addSubView() {
@@ -66,9 +76,7 @@ extension MainViewController {
         view.addSubview(postsTableView)
     }
     
-    
     private func setNavigationController() {
-//        navigationController?.setNavigationBarHidden(true, animated: true)
         title = "Posts"
     }
     
@@ -98,5 +106,16 @@ extension MainViewController {
         }
     }
     
+    //  MARK: - private @objc function
+    
+    @objc private func refreshData() {
+        postManager.fetchPosts()
+
+        DispatchQueue.main.async {
+            self.postsTableView.reloadData()
+            self.refreshControl.endRefreshing()
+        }
+    }
+
 }
 
