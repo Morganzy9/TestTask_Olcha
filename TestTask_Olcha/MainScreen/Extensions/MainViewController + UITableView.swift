@@ -10,21 +10,22 @@ import UIKit
 extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return users.count
+        return isSearching ? filteredPosts.count : users.count
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         guard let postCell = postsTableView.dequeueReusableCell(withIdentifier: PostsCell.reuseIdentifier, for: indexPath) as? PostsCell else {
             fatalError("Can not dequeue PostsCell")
         }
+
         let currentUser = users[indexPath.row]
-        let currentPost = posts[indexPath.row]
-        
+        let currentPost = isSearching ? filteredPosts[indexPath.row] : posts[indexPath.row]
+
         postCell.configureCell(authorName: currentUser.name, postsTitle: currentPost.title)
-        
+
         return postCell
     }
+
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 90

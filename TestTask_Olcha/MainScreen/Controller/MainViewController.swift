@@ -15,13 +15,23 @@ class MainViewController: UIViewController {
     var postManager = PostManager()
     
     var posts: [Post] = []
-    var users: [User] = []
+    var users: [User] = []    
+    var filteredPosts: [Post] = []
+    var isSearching: Bool = false
+
     
     //  MARK: - UI Elements
+    private let postsSearchBar: UISearchBar = {
+        let searchBar = UISearchBar()
+        searchBar.placeholder = "Search Post..."
+        searchBar.sizeToFit()
+        searchBar.isTranslucent = true
+        searchBar.backgroundImage = UIImage()
+        return searchBar
+    }()
     
     let postsTableView: UITableView = {
-        let tableView = UITableView()
-        return tableView
+        return UITableView()
     }()
     
     //  MARK: - LifeCycle
@@ -52,11 +62,13 @@ extension MainViewController {
     }
     
     private func addSubView() {
+        view.addSubview(postsSearchBar)
         view.addSubview(postsTableView)
     }
     
     
     private func setNavigationController() {
+//        navigationController?.setNavigationBarHidden(true, animated: true)
         title = "Posts"
     }
     
@@ -64,6 +76,7 @@ extension MainViewController {
         postsTableView.delegate = self
         postsTableView.dataSource = self
         postManager.delegate = self
+        postsSearchBar.delegate = self
     }
     
     private func registerCells() {
@@ -71,8 +84,14 @@ extension MainViewController {
     }
     
     private func setupConstrains() {
-        postsTableView.snp.makeConstraints { make in
+        postsSearchBar.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide)
+            make.leading.equalTo(view.safeAreaLayoutGuide).offset(15)
+            make.trailing.equalTo(view.safeAreaLayoutGuide).offset(-15)
+        }
+        
+        postsTableView.snp.makeConstraints { make in
+            make.top.equalTo(postsSearchBar.snp.bottom).offset(10)
             make.leading.equalTo(view.safeAreaLayoutGuide)
             make.trailing.equalTo(view.safeAreaLayoutGuide)
             make.bottom.equalTo(view.safeAreaLayoutGuide)

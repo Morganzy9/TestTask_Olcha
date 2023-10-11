@@ -26,6 +26,7 @@
 		16C0E4262AD5B7BA00BF143D /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C0E4252AD5B7BA00BF143D /* UILabel.swift */; };
 		16C0E4362AD667DD00BF143D /* SavedViewController + UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C0E4352AD667DD00BF143D /* SavedViewController + UITableView.swift */; };
 		16C0E4392AD6683C00BF143D /* SavedPostsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C0E4382AD6683C00BF143D /* SavedPostsManager.swift */; };
+		16C0E43D2AD6EBE100BF143D /* MainViewController + UISearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C0E43C2AD6EBE100BF143D /* MainViewController + UISearchBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		16C0E4252AD5B7BA00BF143D /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
 		16C0E4352AD667DD00BF143D /* SavedViewController + UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SavedViewController + UITableView.swift"; sourceTree = "<group>"; };
 		16C0E4382AD6683C00BF143D /* SavedPostsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedPostsManager.swift; sourceTree = "<group>"; };
+		16C0E43C2AD6EBE100BF143D /* MainViewController + UISearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController + UISearchBar.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +162,7 @@
 			children = (
 				16C0E3FC2AD2DBCA00BF143D /* MainViewController + UITableView.swift */,
 				16C0E4172AD5297E00BF143D /* MainViewController + PostManagerDelegate.swift */,
+				16C0E43C2AD6EBE100BF143D /* MainViewController + UISearchBar.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -334,6 +337,7 @@
 				16C0E4162AD521F300BF143D /* Post.swift in Sources */,
 				16C0E3D62AD2CA8200BF143D /* AppDelegate.swift in Sources */,
 				16C0E4182AD5297E00BF143D /* MainViewController + PostManagerDelegate.swift in Sources */,
+				16C0E43D2AD6EBE100BF143D /* MainViewController + UISearchBar.swift in Sources */,
 				16C0E4142AD51DDA00BF143D /* PostManager.swift in Sources */,
 				16C0E4032AD4681E00BF143D /* PostsCell.swift in Sources */,
 				16C0E4232AD5B16D00BF143D /* SavedViewController.swift in Sources */,
