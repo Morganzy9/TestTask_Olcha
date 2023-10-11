@@ -24,8 +24,8 @@ class CustomTabBarController: UITabBarController, UITabBarControllerDelegate {
         let mainVC = MainViewController()
         let savedVC = SavedViewController()
 
-        mainVC.tabBarItem = UITabBarItem(title: "Main", image: UIImage(systemName: "heart"), selectedImage: nil)
-        savedVC.tabBarItem = UITabBarItem(title: "Saved", image: UIImage(systemName: "heart"), selectedImage: nil)
+        mainVC.tabBarItem = UITabBarItem(title: "Main", image: UIImage(systemName: "star"), selectedImage: nil)
+        savedVC.tabBarItem = UITabBarItem(title: "Saved", image: UIImage(systemName: "bookmark"), selectedImage: nil)
 
         let mainNC = UINavigationController(rootViewController: mainVC)
         let savedNC = UINavigationController(rootViewController: savedVC)

@@ -29,4 +29,18 @@ extension SavedViewController: UITableViewDelegate, UITableViewDataSource {
         return 90
     }
     
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        let delete = UIContextualAction(style: .destructive, title: "Delete") { [weak self] _, _, _ in
+            guard let self = self else { return }
+            SavedPostsManager.shared.removeUserAndPost(at: indexPath.row)
+            self.savedTableView.reloadData()
+        }
+        
+        delete.backgroundColor = .red
+        delete.image = UIImage(systemName: "trash")
+        
+        return UISwipeActionsConfiguration(actions: [delete])
+    }
+    
 }

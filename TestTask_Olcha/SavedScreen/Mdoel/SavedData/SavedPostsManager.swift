@@ -54,8 +54,17 @@ class SavedPostsManager {
         currentPost.append(post)
         savedPosts = currentPost
     }
-    
-    
+
+    func removeUserAndPost(at index: Int) {
+//        USER
+        var currentUser = savedUsers
+        currentUser.remove(at: index)
+        savedUsers = currentUser
+//        POST
+        var currentPost = savedPosts
+        currentPost.remove(at: index)
+        savedPosts = currentPost
+    }
     
     
 }
