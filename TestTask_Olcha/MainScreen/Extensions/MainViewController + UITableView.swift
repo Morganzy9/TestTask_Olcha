@@ -37,18 +37,17 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        
-        let save = UIContextualAction(style: .normal, title: "Save") { _, view, _ in
-            view.backgroundColor = .green
-            
+        let save = UIContextualAction(style: .normal, title: "Save") {  _, view, completion in
             SavedPostsManager.shared.addUserAndPost(self.users[indexPath.row], self.posts[indexPath.row])
+            completion(true)
         }
-        
+
         save.image = UIImage(systemName: "bookmark")
-        save.backgroundColor = .gray
-        
+        save.backgroundColor = UIColor.green
+
         let swipeActions = UISwipeActionsConfiguration(actions: [save])
         return swipeActions
     }
+
     
 }
