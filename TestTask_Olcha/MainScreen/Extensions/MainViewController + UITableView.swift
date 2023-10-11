@@ -40,6 +40,9 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let save = UIContextualAction(style: .normal, title: "Save") {  _, view, completion in
             SavedPostsManager.shared.addUserAndPost(self.users[indexPath.row], self.posts[indexPath.row])
+            
+            self.showSavedAlert()
+            
             completion(true)
         }
 
@@ -50,5 +53,13 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         return swipeActions
     }
 
+    func showSavedAlert() {
+        let alert = UIAlertController(title: nil, message: "Item saved successfully", preferredStyle: .alert)
+        present(alert, animated: true, completion: nil)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.7) {
+            alert.dismiss(animated: true, completion: nil)
+        }
+    }
     
 }
