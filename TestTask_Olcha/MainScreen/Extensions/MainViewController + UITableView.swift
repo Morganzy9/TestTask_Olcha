@@ -37,22 +37,6 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         navigationController?.pushViewController(destinationVC, animated: true)
     }
     
-//    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-//        let save = UIContextualAction(style: .normal, title: "Save") {  _, view, completion in
-//            SavedPostsManager.shared.addUserAndPost(self.users[indexPath.row], self.posts[indexPath.row])
-//            
-//            self.showSavedAlert()
-//            
-//            completion(true)
-//        }
-//
-//        save.image = UIImage(systemName: "bookmark")
-//        save.backgroundColor = UIColor.green
-//
-//        let swipeActions = UISwipeActionsConfiguration(actions: [save])
-//        return swipeActions
-//    }
-
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let saveActionTitle = SavedPostsManager.shared.isUserAndPostSaved(users[indexPath.row], posts[indexPath.row]) ? "Unsave" : "Save"
         
