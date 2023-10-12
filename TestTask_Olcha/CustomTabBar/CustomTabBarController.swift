@@ -14,7 +14,7 @@ class CustomTabBarController: UITabBarController, UITabBarControllerDelegate {
         self.delegate = self
         
         tabBar.tintColor = .red
-        tabBar.backgroundColor = Colors.darkWhite
+        tabBar.backgroundColor = .darkWhite
     }
     
     override func viewWillAppear(_ animated: Bool) {

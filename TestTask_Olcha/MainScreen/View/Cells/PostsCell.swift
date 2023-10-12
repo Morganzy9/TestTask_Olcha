@@ -29,8 +29,8 @@ class PostsCell: UITableViewCell {
     //  MARK: - Private Functions
     
     func configureCell(authorName: String, postsTitle: String) {
-        authrorNameLabel.text = authorName
-        postsTitleLabel.text = postsTitle
+        authrorNameLabel.text = "Author: \(authorName)"
+        postsTitleLabel.text = "Post: \(postsTitle)"
         setup()
     }
     

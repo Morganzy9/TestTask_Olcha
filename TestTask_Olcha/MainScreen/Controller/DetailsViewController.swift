@@ -46,11 +46,7 @@ class DetailsViewController: UIViewController {
     }()
     
     private lazy var userStack: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [userId, usersName, userName, userEmail, userPhone, userWebsite])
-        stackView.axis = .vertical
-        stackView.spacing = 5
-        stackView.distribution = .fill
-        return stackView
+        return UIStackView(axis: .vertical, backgroundColor: .darkWhite, spacing: 5, distribution: .fill, conrnerRadius: 10.0)
     }()
     
     //    Address
@@ -86,12 +82,8 @@ class DetailsViewController: UIViewController {
         return UILabel(textColor: .black, textFont: .systemFont(ofSize: 17, weight: .medium))
     }()
     
-    private lazy var addressStack: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [userStreet, userSuite, userCity, userZipCode, userLat, userLng])
-        stackView.axis = .vertical
-        stackView.spacing = 5
-        stackView.distribution = .fill
-        return stackView
+    private let addressStack: UIStackView = {
+        return UIStackView(axis: .vertical, backgroundColor: .darkWhite, spacing: 5, distribution: .fill, conrnerRadius: 10.0)
     }()
     
     //    Company
@@ -116,6 +108,8 @@ class DetailsViewController: UIViewController {
         stackView.axis = .vertical
         stackView.spacing = 5
         stackView.distribution = .fill
+        stackView.backgroundColor = .darkWhite
+        stackView.layer.cornerRadius = 10.0
         return stackView
     }()
     
@@ -141,34 +135,49 @@ extension DetailsViewController {
     private func addSubView() {
         view.addSubview(userTitle)
         view.addSubview(userStack)
+        userStack.addArrangedSubview(userId)
+        userStack.addArrangedSubview(usersName)
+        userStack.addArrangedSubview(userName)
+        userStack.addArrangedSubview(userEmail)
+        userStack.addArrangedSubview(userPhone)
+        userStack.addArrangedSubview(userWebsite)
         view.addSubview(userAddress)
         view.addSubview(addressStack)
+        addressStack.addArrangedSubview(userStreet)
+        addressStack.addArrangedSubview(userSuite)
+        addressStack.addArrangedSubview(userCity)
+        addressStack.addArrangedSubview(userZipCode)
+        addressStack.addArrangedSubview(userLat)
+        addressStack.addArrangedSubview(userLng)
         view.addSubview(userCompany)
         view.addSubview(companyStack)
+        companyStack.addArrangedSubview(userCompanyName)
+        companyStack.addArrangedSubview(userCompanyCatchPhrase)
+        companyStack.addArrangedSubview(userCompanyBS)
     }
     
     private func setInformation() {
         if let id = user?.id  {
-            userId.text = "User ID: \(id)"
+            userId.text = "ID: \(id)"
         } else {
-            userId.text = "User ID: \(0)"
+            userId.text = "ID: \(0)"
         }
-        usersName.text = "User Name: \(user?.name ?? "")"
-        userName.text = "User UserName: \(user?.username ?? "")"
-        userEmail.text = "User Email: \(user?.email ?? "")"
-        userPhone.text = "User Phone Number: \(user?.phone ?? "")"
-        userWebsite.text = "Users WebSite: \(user?.website ?? "")"
+        usersName.text = "Name: \(user?.name ?? "")"
+        userName.text = "UserName: \(user?.username ?? "")"
+        userEmail.text = "Email: \(user?.email ?? "")"
+        userPhone.text = "Phone Number: \(user?.phone ?? "")"
+        userWebsite.text = "WebSite: \(user?.website ?? "")"
         
-        userStreet.text = "Users Street: \(user?.address.street ?? "")"
-        userSuite.text = "Users Suite: \(user?.address.suite ?? "")"
-        userCity.text = "Users City: \(user?.address.city ?? "")"
-        userZipCode.text = "Users ZipCode: \(user?.address.zipcode ?? "")"
-        userLat.text = "Users Latitude: \(user?.address.geo.lat ?? "")"
-        userLng.text = "Users Longitude: \(user?.address.geo.lng ?? "")"
+        userStreet.text = "Street: \(user?.address.street ?? "")"
+        userSuite.text = "Suite: \(user?.address.suite ?? "")"
+        userCity.text = "City: \(user?.address.city ?? "")"
+        userZipCode.text = "ZipCode: \(user?.address.zipcode ?? "")"
+        userLat.text = "Latitude: \(user?.address.geo.lat ?? "")"
+        userLng.text = "Longitude: \(user?.address.geo.lng ?? "")"
         
-        userCompanyName.text = "Users Company Name: \(user?.company.name ?? "")"
-        userCompanyCatchPhrase.text = "Users Company Catch Phrase: \(user?.company.catchPhrase ?? "")"
-        userCompanyBS.text = "Users BS \(user?.company.bs ?? "")"
+        userCompanyName.text = "Company Name: \(user?.company.name ?? "")"
+        userCompanyCatchPhrase.text = "Company Catch Phrase: \(user?.company.catchPhrase ?? "")"
+        userCompanyBS.text = "BS: \(user?.company.bs ?? "")"
     }
     
     private func setupConstrains() {
@@ -178,8 +187,14 @@ extension DetailsViewController {
         }
         userStack.snp.makeConstraints { make in
             make.top.equalTo(userTitle.snp.bottom).offset(10)
-            make.leading.equalTo(view.safeAreaLayoutGuide).offset(15)
-            make.trailing.equalTo(view.safeAreaLayoutGuide).offset(-15)
+            make.leading.equalTo(view.safeAreaLayoutGuide).offset(10)
+            make.trailing.equalTo(view.safeAreaLayoutGuide).offset(-10)
+        }
+        
+        for element in userStack.arrangedSubviews {
+            element.snp.makeConstraints { make in
+                make.leading.equalTo(userStack.snp.leading).offset(10)
+            }
         }
         userAddress.snp.makeConstraints { make in
             make.top.equalTo(userStack.snp.bottom).offset(10)
@@ -187,8 +202,14 @@ extension DetailsViewController {
         }
         addressStack.snp.makeConstraints { make in
             make.top.equalTo(userAddress.snp.bottom).offset(10)
-            make.leading.equalTo(view.safeAreaLayoutGuide).offset(15)
-            make.trailing.equalTo(view.safeAreaLayoutGuide).offset(-15)
+            make.leading.equalTo(view.safeAreaLayoutGuide).offset(10)
+            make.trailing.equalTo(view.safeAreaLayoutGuide).offset(-10)
+        }
+        
+        for element in addressStack.arrangedSubviews {
+            element.snp.makeConstraints { make in
+                make.leading.equalTo(addressStack.snp.leading).offset(10)
+            }
         }
         userCompany.snp.makeConstraints { make in
             make.top.equalTo(addressStack.snp.bottom).offset(10)
@@ -196,8 +217,14 @@ extension DetailsViewController {
         }
         companyStack.snp.makeConstraints { make in
             make.top.equalTo(userCompany.snp.bottom).offset(10)
-            make.leading.equalTo(view.safeAreaLayoutGuide).offset(15)
-            make.trailing.equalTo(view.safeAreaLayoutGuide).offset(-15)
+            make.leading.equalTo(view.safeAreaLayoutGuide).offset(10)
+            make.trailing.equalTo(view.safeAreaLayoutGuide).offset(-10)
+        }
+        
+        for element in companyStack.arrangedSubviews {
+            element.snp.makeConstraints { make in
+                make.leading.equalTo(companyStack.snp.leading).offset(10)
+            }
         }
     }
     

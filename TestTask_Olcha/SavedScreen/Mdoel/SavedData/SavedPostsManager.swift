@@ -66,5 +66,12 @@ class SavedPostsManager {
         savedPosts = currentPost
     }
     
-    
+    func isUserAndPostSaved(_ user: User, _ post: Post) -> Bool {
+        return savedUsers.contains { savedUser in
+            savedUser.id == user.id
+        } && savedPosts.contains { savedPost in
+            savedPost.id == post.id
+        }
+    }
+
 }

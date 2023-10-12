@@ -51,6 +51,5 @@ extension SavedViewController: UITableViewDelegate, UITableViewDataSource {
         destinationVC.user = SavedPostsManager.shared.savedUsers[indexPath.row]
         navigationController?.pushViewController(destinationVC, animated: true)
     }
-
     
 }

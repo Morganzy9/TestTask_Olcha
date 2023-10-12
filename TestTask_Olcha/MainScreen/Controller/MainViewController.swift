@@ -76,6 +76,7 @@ extension MainViewController {
     
     private func setNavigationController() {
         title = "Posts"
+        navigationController?.navigationBar.tintColor = .red
     }
     
     private func setDelegates() {

@@ -45,6 +45,7 @@ extension SavedViewController {
     
     private func setNavigationController() {
         title = "Saved Posts"
+        navigationController?.navigationBar.tintColor = .red
     }
     
     private func setDelegates() {
